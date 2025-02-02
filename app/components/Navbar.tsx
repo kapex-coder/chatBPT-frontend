@@ -1,6 +1,5 @@
 "use client";
 
-import Link from "next/link";
 import ProfileAvatar from "../chat/ProfileAvatar";
 import { useSidebar } from "../context/SidebarContext";
 import { Menu } from "lucide-react";
@@ -10,11 +9,10 @@ import BrandLogo from "./BrandLogo";
 
 export default function Navbar() {
   const { isOpen, toggleSidebar } = useSidebar();
-  const { data: session } = useSession(); // Get session data
+  const { data: session } = useSession();
 
   return (
     <nav className="flex justify-between items-center px-6 py-2 border-b border-gray-700 bg-gray-900 text-white w-full z-40 min-h-[10vh]">
-      {/* Left Section: Sidebar Toggle & Logo */}
       <div className="flex items-center gap-4">
         {!isOpen && (
           <>
@@ -30,9 +28,7 @@ export default function Navbar() {
           </>
         )}
       </div>
-      {/* Right Section: Profile Avatar (Only show if logged in) */}
       {session?.user && <ProfileAvatar />}
-      {/* Check if session exists and user is present */}
     </nav>
   );
 }

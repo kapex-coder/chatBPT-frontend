@@ -13,10 +13,9 @@ export default function Sidebar() {
   return (
     <motion.aside
       initial={{ width: "0px" }}
-      animate={{ width: isOpen ? "256px" : "0px" }} // 256px = w-64
+      animate={{ width: isOpen ? "256px" : "0px" }}
       transition={{ duration: 0.3, ease: "easeInOut" }}
       className="max-md:fixed top-0 left-0 h-screen bg-black/80 backdrop-blur-lg text-white shadow-lg overflow-hidden z-50">
-      {/* Sidebar Header */}
       <motion.div
         initial={{ opacity: 0 }}
         animate={{ opacity: isOpen ? 1 : 0 }}
@@ -36,13 +35,11 @@ export default function Sidebar() {
         </motion.button>
       </motion.div>
 
-      {/* Sidebar Content */}
       <motion.div
         initial={{ opacity: 0 }}
         animate={{ opacity: isOpen ? 1 : 0 }}
         transition={{ duration: 0.3, delay: 0.2 }}
         className="flex flex-col p-4 space-y-4 overflow-y-auto h-[calc(100vh-60px)] scrollbar-thin scrollbar-thumb-gray-600">
-        {/* New Chat Button */}
         <motion.button
           whileHover={{ scale: 1.05 }}
           whileTap={{ scale: 0.95 }}
@@ -52,7 +49,6 @@ export default function Sidebar() {
           <span>New Chat</span>
         </motion.button>
 
-        {/* Chat History */}
         <h2 className="text-lg font-semibold">Chat History</h2>
         <ul className="space-y-2">
           {["Chat 1", "Chat 2", "Chat 3"].map((chat, index) => (

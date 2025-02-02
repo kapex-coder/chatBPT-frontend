@@ -17,14 +17,12 @@ export default function ChatMessage({
       className={`flex items-end gap-2 ${
         isUser ? "justify-end" : "justify-start"
       } mb-2`}>
-      {/* Assistant Avatar */}
       {!isUser && (
         <div className="w-8 h-8 bg-gray-500 text-white flex items-center justify-center rounded-full text-sm">
           🤖
         </div>
       )}
 
-      {/* Message Bubble */}
       <div
         className={`p-3 rounded-lg shadow-md max-w-[75%] ${
           isUser
@@ -34,7 +32,6 @@ export default function ChatMessage({
         {content}
       </div>
 
-      {/* User Avatar */}
       {isUser && (
         <div className="w-8 h-8 bg-blue-500 text-white flex items-center justify-center rounded-full text-sm">
           😊

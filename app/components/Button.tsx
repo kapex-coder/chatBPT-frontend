@@ -1,4 +1,4 @@
-import { cn } from "@/app/lib/utils"; // Ensure correct path
+import { cn } from "@/app/lib/utils"; 
 import { Loader2 } from "lucide-react";
 import Link from "next/link";
 import { ButtonHTMLAttributes, AnchorHTMLAttributes, ReactNode } from "react";
@@ -15,20 +15,17 @@ interface BaseButtonProps {
   className?: string;
 }
 
-// Button-specific props (without `href`)
 type ButtonAsButton = BaseButtonProps &
   ButtonHTMLAttributes<HTMLButtonElement> & {
-    href?: never; // Ensures `href` is NOT allowed for buttons
+    href?: never;
   };
 
-// Link-specific props (requires `href`)
 type ButtonAsLink = BaseButtonProps &
   AnchorHTMLAttributes<HTMLAnchorElement> & {
-    href: string; // Ensures `href` is required for links
+    href: string;
     external?: boolean;
   };
 
-// Use a union type instead of extending both interfaces
 type ButtonProps = ButtonAsButton | ButtonAsLink;
 
 const Button: React.FC<ButtonProps> = (props) => {
@@ -69,9 +66,9 @@ const Button: React.FC<ButtonProps> = (props) => {
     </>
   );
 
-  // 🔹 TypeScript will infer if `props` is ButtonAsLink or ButtonAsButton
+  
   if ("href" in props) {
-    const { href, external, ...anchorProps } = rest as ButtonAsLink; // ✅ Extracting only valid `a` tag props
+    const { href, external, ...anchorProps } = rest as ButtonAsLink;
 
     if (external) {
       return (
@@ -106,8 +103,7 @@ const Button: React.FC<ButtonProps> = (props) => {
     );
   }
 
-  // Otherwise, render a `<button>`
-  const { disabled, ...buttonProps } = rest as ButtonAsButton; // ✅ Extracting only valid `button` props
+  const { disabled, ...buttonProps } = rest as ButtonAsButton;
   return (
     <button
       className={cn(

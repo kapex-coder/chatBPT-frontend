@@ -10,12 +10,10 @@ export default function ChatPage() {
   const { data: session, status } = useSession();
   const router = useRouter();
 
-  // Redirect to login if unauthenticated
   useEffect(() => {
     if (status === "unauthenticated") router.replace("/login");
   }, [status, router]);
 
-  // Show loading state
   if (status === "loading") {
     return <Loader />;
   }

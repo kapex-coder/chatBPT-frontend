@@ -53,7 +53,7 @@ const ProfileAvatar = () => {
           <Menu.Item>
             {({ active }) => (
               <button
-                onClick={() => signOut()} // Logs the user out
+                onClick={() => signOut()}
                 className={`${
                   active ? "bg-red-500 text-white" : "text-red-500"
                 } w-full text-left px-4 py-2`}>

@@ -30,7 +30,6 @@ export default function LoginPage() {
         <h2 className="text-2xl font-bold">Welcome Back!</h2>
         <p className="text-gray-400">Sign in to continue</p>
 
-        {/* Google OAuth Sign-In */}
         <motion.button
           whileHover={{ scale: 1.05 }}
           whileTap={{ scale: 0.95 }}
@@ -38,7 +37,7 @@ export default function LoginPage() {
           className="w-full bg-red-500 text-white p-3 rounded-lg shadow-md hover:bg-red-600 transition-all">
           Sign in with Google
         </motion.button>
-
+        
         <p className="text-xs text-gray-500">
           By signing in, you agree to our Terms & Privacy.
         </p>

@@ -2,7 +2,7 @@
 
 import { useEffect, useRef, useState } from "react";
 import ChatMessage from "./ChatMessage";
-import InputBox from "../components/InputBox";
+import InputBox from "../components/ChatInputBox";
 import { useSendMessageMutation } from "../lib/features/chat/chatApi";
 import { motion } from "framer-motion";
 

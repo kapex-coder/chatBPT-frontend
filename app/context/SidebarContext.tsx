@@ -2,7 +2,7 @@
 
 import { createContext, useContext, useEffect, useState } from "react";
 
-// Create Context
+// Sidebar Context
 const SidebarContext = createContext<{
   isOpen: boolean;
   toggleSidebar: () => void;
@@ -11,11 +11,10 @@ const SidebarContext = createContext<{
   toggleSidebar: () => {},
 });
 
-// Provider Component
+// Sidebar Provider
 export function SidebarProvider({ children }: { children: React.ReactNode }) {
   const [isOpen, setIsOpen] = useState(false);
 
-  // Toggle function with localStorage update
   const toggleSidebar = () => {
     setIsOpen((prev) => {
       const newState = !prev;
@@ -30,7 +29,7 @@ export function SidebarProvider({ children }: { children: React.ReactNode }) {
   );
 }
 
-// Hook for easy access
+// Sidebar Hook
 export function useSidebar() {
   return useContext(SidebarContext);
 }
