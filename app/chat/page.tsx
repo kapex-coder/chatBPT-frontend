@@ -11,10 +11,12 @@ export default function ChatPage() {
   const router = useRouter();
 
   useEffect(() => {
-    if (status === "unauthenticated") router.replace("/login");
+    if (status === "unauthenticated") {
+      router.replace("/login");
+    }
   }, [status, router]);
 
-  if (status === "loading") {
+  if (status === "loading" || status === "unauthenticated") {
     return <Loader />;
   }
 

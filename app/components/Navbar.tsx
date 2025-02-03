@@ -1,10 +1,10 @@
 "use client";
 
-import ProfileAvatar from "../chat/ProfileAvatar";
+import ProfileAvatar from "./ProfileAvatar";
 import { useSidebar } from "../context/SidebarContext";
 import { Menu } from "lucide-react";
 import Button from "./Button";
-import { useSession } from "next-auth/react"; // Import useSession from next-auth
+import { useSession } from "next-auth/react";
 import BrandLogo from "./BrandLogo";
 
 export default function Navbar() {
